@@ -1,0 +1,333 @@
+<html>
+	<head>
+	
+	<style>
+	
+	/*       begin Calculator styling      */
+	.device {
+		outline: none; border: 6px ridge black; width:305px; height:550px; margin: 100px 0px 0px 0px; background: #2D2D34; border-radius: 50px; box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+	}
+	.display {
+		outline: none; border: none; width: 200px; height: 60px; margin: 40px 0px 20px 0px; background: #2D2D34; border-radius:10px; font-size: 40; color: white; text-align:right;
+	}
+	.number {
+		outline: none; border: ridge 1px white; width:60px; height:60px; margin: 3px; background: #2D2D34; border-radius: 100px; font-size: 30; color: white; 
+	}
+
+	
+	.operation {
+		outline: none; border: ridge 1px white; width:60px; height:60px; background: #2D2D34; margin: 3px; border-radius: 100px; font-size: 30; color: gold;
+	}
+
+	.zero {
+		outline: none; border: ridge 1px; width: 128px; height: 60px; margin: 3px; background: #2D2D34; border-radius: 100px; font-size: 30; color: white; 
+	}
+	.dot {
+		outline: none; border: ridge 1px; width: 60px; height: 60px; background: #2D2D34; margin: 4px; border-radius: 100px; font-size: 30; color: white;
+	}
+	.equals {
+		outline: none; border: ridge 1px gold; width: 128px; height: 60px; margin: 4px; background: #2D2D34; border-radius: 100px; font-size: 30; color: white;
+	}
+	.clear {
+		outline: none; border: ridge 1px crimson; width: 60px; height: 60px; margin: 4px; background: #2D2D34; border-radius: 100px; font-size: 30; color: white;
+	}
+	.back {
+		outline: none; border: ridge 1px orange; width: 60px; height: 60px; margin: 4px; background: #2D2D34; border-radius: 100px; font-size: 30; color: gold;
+	} 
+	.home {
+		outline: none; border: ridge 1px #2D2D34; width: 55px; height: 55px; margin: 20px 0px 0px 0px; background: #2D2D34; border-radius: 100px;
+	
+	/*    End Calculator styling    */
+	
+	/*     Begin regular site styling     */
+	}
+	h1 {
+		font-family: Verdana, Geneva, sans-serif; font-size: 40; color:white;
+	}
+	p  {
+		font-family: Verdana, Geneva, sans-serif; font-size: 18; color:white;
+	}
+	
+	
+	/*.header {
+
+
+	} */
+
+	/* .body {
+		"background:white; height:2000px;"
+
+	}  */
+
+	.description {
+		 position: relative; top: 100px; border: groove 5px silver; height:325px; width: 620px; background-color:#2d2d34;  border-radius: 40px; color:white; font-family: Verdana, Geneva, sans-serif;
+}
+
+	.footer {
+		position: relative; bottom: 0%; height: 400px; width: 100%; background: #32BFC9; 
+
+	}
+
+	body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+#container {
+   min-height:100%;
+   position:relative;
+}
+#header {
+   background:#ff0;
+   padding:10px;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;   /* Height of the footer */
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background:#6cf;
+}
+
+
+	
+
+		</style>
+	
+	
+	
+	<title>Nick's Famous Calculator</title>
+	
+		
+	</head>
+				<!--onkeypress works for all functions but delete, onkeydown works for only delete-->
+		<body class= "body" onkeypress="myFunction(event)"; onkeydown="myFunctionDelete(event)" >
+		<center><br>
+			<h1 style="margin:50px;"><font> </font></h1>
+
+			<div class="device">
+				<form  name ="Calculator" style="width:305px; height:550px; background:#2D2D34; border-radius: 60px">
+				<input class= "display" name ="display" placeholder = "0" />
+				<br>
+				<input class= "number" type= "button" value="7" onClick ="document.Calculator.display.value +='7'" />
+				<input class= "number" type= "button" value="8" onClick ="document.Calculator.display.value +='8'" />
+				<input class= "number" type= "button" value="9" onClick ="document.Calculator.display.value +='9'" />
+				<input class= "operation" type= "button" value="+" onClick ="btnplus()"/>
+				<br>
+				<input class= "number" type= "button" value="4" onClick ="document.Calculator.display.value +='4'" />
+				<input class= "number" type= "button" value="5" onClick ="document.Calculator.display.value +='5'" />
+				<input class= "number" type= "button" value="6" onClick ="document.Calculator.display.value +='6'" />
+				<input class= "operation" type= "button" value="-" onClick ="btnsub()" />
+				<br>
+				<input class= "number" type= "button" value="1" onClick ="document.Calculator.display.value +='1'" />
+				<input class= "number" type= "button" value="2" onClick ="document.Calculator.display.value +='2'" />
+				<input class= "number" type= "button" value="3" onClick ="document.Calculator.display.value +='3'" />
+				<input class= "operation" type ="button" value="x" onClick ="btnmult()" />
+				<br>
+				<input class= "zero" type= "button" value="0" onClick ="document.Calculator.display.value +='0'"/>
+				<input class= "dot" type= "button" value="." onClick ="btndot()" />
+				<input class= "operation" type= "button" value="÷" onClick ="btndiv()" />
+				<br>
+	
+				<input class= "equals" type= "button" value="=" onClick ="document.Calculator.display.value = eval(document.Calculator.display.value)" />
+				<input class= "back" type= "button"  value="&#8592;" onClick="back()" />
+				<input class= "clear" type= "button" value="C" onClick ="btnclear()" />
+				<br>
+				<input class= "home" type= "button" onClick= "btnhome()" />
+				</form>
+			</div>
+
+		<div class="description">	
+			
+			<center><box class="header">
+				<h1>The Math Machine</h1>
+				<p>This is likely <strong>the most powerful</strong> math machine in the world.<br>
+				<i>(just don't hit enter after clicking a button)</i></p>
+					<div style="width:500px; text-align:left; margin-left:120px"><strong>Keyboard commands:</strong>
+					<ul><li>1 to 9</li>
+					<li>* / + -</li>
+					<li>C to clear</li>
+					<li>Enter, Spacebar, or =</li>
+					<li>Delete/Backspace</li>
+					</ul></div>
+				</p>
+				
+			</box>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		
+		</div>
+		<div>
+			<box style="height:600px; width:100%; background:#944B9A">
+
+
+			</box>
+
+		</div>
+		<!--    <div class="footer">
+			<footer> </footer>    -->
+
+
+		</div>
+	<script>
+	
+	
+	
+	// myFunctionDelete is called on by onkeydown in body tag to operate the delete key -- if no delete key, do nothing
+	function myFunctionDelete(event)
+	{
+		var keyCode = (event.keyCode)
+		var key = String.fromCharCode(event.keyCode)
+
+		if(keyCode=="8" || keyCode=="46"){
+   		back()}
+		
+		
+		
+		else {
+			document.Calculator.display.value +="";
+    		document.Calculator.display.style.textAlign="right";
+ 		}
+	}
+	function myFunction(event)
+	 {
+	 
+	  var key = String.fromCharCode(event.keyCode)
+	  var keyCode = (event.keyCode)
+	  
+	  	
+	    		
+  		if(key=="c"){
+    	btnclear()
+  		}
+  		
+  		else if(key=="/"){
+    	btndiv()
+  		}
+  		else if(key=="+"){
+    	btnplus()
+  		}
+  		else if(key=="-"){
+    	btnsub()
+  		}
+  		else if(key=="*"){
+    	btnmult()
+  		}
+  		else if(key=="."){
+    	btndot()
+  		}
+  		
+  		// using keyCode to get delete to work -- unsuccessful so far
+  		//else if(keyCode=="46"){
+    	//back()
+    	//}
+  		// end using keyCode " " 
+  		
+		  //keyCode 13 is for Enter/Return
+  		
+  				
+  		else if(key=="="){
+    		document.Calculator.display.value = eval(document.Calculator.display.value)
+    		document.Calculator.display.style.textAlign="right";
+  		}
+  		//event.preventDefault(); is removing the focus from last click (and for spacebar prevents scrolling)
+		  else if(key==" "){
+    		event.preventDefault();
+			document.Calculator.display.value = eval(document.Calculator.display.value)
+    		document.Calculator.display.style.textAlign="right";
+    		}
+	
+		else if(keyCode=="13"){
+			event.preventDefault();
+			document.Calculator.display.value = eval(document.Calculator.display.value)
+    		document.Calculator.display.style.textAlign="right";	
+    	}	
+
+
+    	
+    		
+		// isNaN prevents letters
+		    		
+    	else if (isNaN(key)) {
+  		}
+  		
+  		else{
+    		document.Calculator.display.value +=key
+    		document.Calculator.display.style.textAlign="right";
+    		console.log(key)
+  		}
+  		
+  		
+  	} 
+		
+		// says that key & keyCode aren't defined 
+			//	console.log(key)
+			//	console.log(keyCode)	
+			
+		
+	//if the key is a number
+	//then push the value to the calc
+	//otherwise do nothing
+	
+	
+
+	
+		//operation buttons defined here * / + - = clear % and home (home is work in progress)
+		function back() {
+  		var value = document.Calculator.display.value;
+    	document.Calculator.display.value = value.substr(0, value.length - 1);
+		}
+	
+		function btnplus()
+		{	document.Calculator.display.value +="+";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btnsub()
+		{	document.Calculator.display.value +="-";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btnmult()
+		{	document.Calculator.display.value +="*";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btnMod()
+		{	document.Calculator.display.value +="%";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btndot()
+		{	document.Calculator.display.value +=".";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btndiv()
+		{	document.Calculator.display.value +="/";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btnclear()
+		{	document.Calculator.display.value ="";
+			document.Calculator.display.style.textAlign="right";
+		}
+		function btnhome()
+		{	document.style.display.background ="white";
+
+		}
+
+		/* experiment to get rid of the focus/selection on the buttons -- remove the enter=last click issue
+		function mouseup()
+		{	$('.btn').mouseup(function() { this.blur() })
+
+		}
+*/
+		
+	</script>
+
+
+		</center>
+		</body>
+</html>
