@@ -136,7 +136,7 @@
 
 	
 
-<div id="container" onkeypress="myFunction(event)" onkeydown="myFunctionDelete(event)">
+<div id="container">
 
         	
 			
@@ -159,7 +159,7 @@
            
 
 				<!--onkeypress works for all functions but delete, onkeydown works for only delete-->
-		<div id="body" >
+		<body onkeypress="myFunction(event)" onkeydown="myFunctionDelete(event)" >
 		<br><br>
 		<center>
 			<div class="device">
@@ -195,7 +195,7 @@
 			</div>
 		
 
-        </div>
+        </body>
     <!-- BEGIN JavaScript-->
 		
 <script>
