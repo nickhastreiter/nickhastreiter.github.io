@@ -279,13 +279,21 @@
 			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
 
     		document.Calculator.display.style.textAlign="right";
-    		}
+			  {
+			  
+			  trimzero()
+			  
+    				}
 	
 		else if(keyCode=="13"){
 			event.preventDefault();
 			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
 
     		document.Calculator.display.style.textAlign="right";	
+			
+			{
+				trimzero()
+			}
     	}	
 
 
