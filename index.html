@@ -18,7 +18,7 @@
 	<style>
 	
 	/*       begin Calculator styling      */
-	.device {
+	#device {
 		position: relative; top: 550px; outline: none; border: 6px ridge black; width:305px; height:550px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 50px; box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
 	}
 	.display {
@@ -68,6 +68,13 @@
     }
 
 	
+
+
+	#home {
+		position: absolute; bottom: 25px; left: 120px;
+
+
+	}
 
 
 	#header {
@@ -173,8 +180,8 @@
 		<body onkeypress="myFunction(event)" onkeydown="myFunctionDelete(event)" >
 		<br><br>
 		<center>
-			<div class="device">
-				<form  name ="Calculator" style="width:305px; height:550px; background:#2D2D34; border-radius: 60px">
+			<div id="device">
+				<form  name ="Calculator" style="width:305px; height:462px; background:#2D2D34; border-radius: 60px">
 				<input class= "display" name ="display" placeholder = "0" />
 				<br>
 				<input class= "number" type= "button" value="7" onClick ="document.Calculator.display.value +='7'" />
@@ -200,9 +207,11 @@
 				<input class= "equals" type= "button" value="=" onClick ="document.Calculator.display.value = eval(document.Calculator.display.value)" />
 				<input class= "back" type= "button"  value="&#8592;" onClick="back()" />
 				<input class= "clear" type= "button" value="C" onClick ="btnclear()" />
-				<br>
-			
 				</form>
+				<center><form id="home" name ="Home" style="width:65px; height:65px; background:#2D2D34; border-radius: 100px">
+				<input class= "home" type= "button" value=" " onClick = "btnhome()" />
+			
+				</form></center>
 			</div>
 		
 
@@ -226,10 +235,7 @@
 		
 		
 		
-		else {
-			document.Calculator.display.value +="";
-    		document.Calculator.display.style.textAlign="right";
- 		}
+
 	}
 
 
@@ -261,11 +267,6 @@
     	btndot()
   		}
   		
-  		// using keyCode to get delete to work -- unsuccessful so far
-  		//else if(keyCode=="46"){
-    	//back()
-    	//}
-  		// end using keyCode " " 
   		
 		  //keyCode 13 is for Enter/Return
   		
@@ -300,6 +301,9 @@
     	
     		
 		// isNaN prevents letters
+		//if the key is a number
+		//then push the value to the calc
+		//otherwise do nothing
 		    		
     	else if (isNaN(key)) {
   		}
@@ -308,24 +312,13 @@
     		document.Calculator.display.value +=key
     		document.Calculator.display.style.textAlign="right";
     		console.log(key)
-  		}
-  		
-  		
-  	} 
-		
-		// says that key & keyCode aren't defined 
-			//	console.log(key)
-			//	console.log(keyCode)	
-			
-		
-	//if the key is a number
-	//then push the value to the calc
-	//otherwise do nothing
+  			}
+  		} 
 	
-					 // original trimzero: works to remove just one number but not a loop  
-				function trimzero() {
+
+			// original trimzero: works to remove just one number but not a loop  
+			function trimzero() {
 			var value = document.Calculator.display.value;
-			var zero = document.Calculator.display.value.endsWith("0");
 
 			if (value.endsWith("0")) {
 				document.Calculator.display.value = value.substr(0, value.length - 1);
@@ -334,11 +327,35 @@
 			else if (value.endsWith("."))
 				document.Calculator.display.value = value.substr(0, value.length -1)
 			}
+		
+
+		//trying to make a new screen... this removes everything:
+			function btnhome() {
+   			 var x = document.forms[0];
+   			 if (x.style.display === "none") {
+        		x.style.display = "block";
+    		} 		
+				else {
+       			 x.style.display = "none";
+    }
+}
+
+	//#2 new screen
+/*			function btnhome() {
+   			 var x = getElementById("screen");
+   			 if (x.style.display === "none") {
+        		x.style.display = "block";
+    		} 		
+				else {
+       			 x.style.display = "none";
+    }
+}
+*/
+
 
 
 	
 		//operation buttons defined here * / + - = clear % and home (home is work in progress)
-		
 
 
 		function back() {
@@ -375,17 +392,11 @@
 			document.Calculator.display.style.textAlign="right";
 		}
 	/*	function btnhome()
-		{	document.style.display.background ="white";
+		{	document.Calculator.device.style ="white";
 
 		}
 	*/
-		/* experiment to get rid of the focus/selection on the buttons -- remove the enter=last click issue
-		function mouseup()
-		{	$('.btn').mouseup(function() { this.blur() })
 
-		}
-*/
-		
 </script>
 
 		</center>
