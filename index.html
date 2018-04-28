@@ -4,6 +4,17 @@
 		
 	<head>
 	
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89537084-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89537084-2');
+</script>
+
+
 	<style>
 	
 	/*       begin Calculator styling      */
@@ -256,19 +267,24 @@
   		
   				
   		else if(key=="="){
-    		document.Calculator.display.value = eval(document.Calculator.display.value)
+    		document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4);
     		document.Calculator.display.style.textAlign="right";
+			{
+				trimzero()
+				}
   		}
   		//event.preventDefault(); is removing the focus from last click (and for spacebar prevents scrolling)
 		  else if(key==" "){
     		event.preventDefault();
-			document.Calculator.display.value = eval(document.Calculator.display.value)
+			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
+
     		document.Calculator.display.style.textAlign="right";
     		}
 	
 		else if(keyCode=="13"){
 			event.preventDefault();
-			document.Calculator.display.value = eval(document.Calculator.display.value)
+			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
+
     		document.Calculator.display.style.textAlign="right";	
     	}	
 
@@ -302,6 +318,18 @@
 
 	
 		//operation buttons defined here * / + - = clear % and home (home is work in progress)
+		
+		function trimzero() {
+			var value = document.Calculator.display.value;
+			var zero = document.Calculator.display.value.endsWith("0");
+
+			if (zero === true) {
+				document.Calculator.display.value = value.substr(0, value.length - 1);
+
+			}
+
+		}
+
 		function back() {
   		var value = document.Calculator.display.value;
     	document.Calculator.display.value = value.substr(0, value.length - 1);
@@ -335,11 +363,11 @@
 		{	document.Calculator.display.value ="";
 			document.Calculator.display.style.textAlign="right";
 		}
-		function btnhome()
+	/*	function btnhome()
 		{	document.style.display.background ="white";
 
 		}
-
+	*/
 		/* experiment to get rid of the focus/selection on the buttons -- remove the enter=last click issue
 		function mouseup()
 		{	$('.btn').mouseup(function() { this.blur() })
