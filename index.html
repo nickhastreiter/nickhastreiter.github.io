@@ -4,6 +4,15 @@
 		
 	<head>
 	
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89537084-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89537084-2');
+</script>
 
 
 	<style>
@@ -192,13 +201,15 @@
 				<input class= "back" type= "button"  value="&#8592;" onClick="back()" />
 				<input class= "clear" type= "button" value="C" onClick ="btnclear()" />
 				<br>
-				<input class= "home" type= "button" value=" " onClick= "btnhome()" />
+			
 				</form>
 			</div>
 		
 
         </body>
-    <!-- BEGIN JavaScript-->
+   
+	
+		<!-- BEGIN JavaScript-->
 		
 <script>
 	
@@ -220,6 +231,8 @@
     		document.Calculator.display.style.textAlign="right";
  		}
 	}
+
+
 	function myFunction(event)
 	 {
 	 
@@ -258,34 +271,29 @@
   		
   				
   		else if(key=="="){
-    		document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4);
+    		document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7);
     		document.Calculator.display.style.textAlign="right";
 			{
 				trimzero()
-				}
+			}
   		}
   		//event.preventDefault(); is removing the focus from last click (and for spacebar prevents scrolling)
 		  else if(key==" "){
     		event.preventDefault();
-			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
-
+			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7)
     		document.Calculator.display.style.textAlign="right";
-			  {
-			  
-			  trimzero()
-			  
-    				}
-		  }
+			{
+				trimzero()
+				}
+    		}
 	
 		else if(keyCode=="13"){
 			event.preventDefault();
-			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(4)
-
+			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7)
     		document.Calculator.display.style.textAlign="right";	
-			
 			{
 				trimzero()
-			}
+				}
     	}	
 
 
@@ -314,21 +322,24 @@
 	//then push the value to the calc
 	//otherwise do nothing
 	
-	
+					 // original trimzero: works to remove just one number but not a loop  
+				function trimzero() {
+			var value = document.Calculator.display.value;
+			var zero = document.Calculator.display.value.endsWith("0");
+
+			if (value.endsWith("0")) {
+				document.Calculator.display.value = value.substr(0, value.length - 1);
+				trimzero();
+			}
+			else if (value.endsWith("."))
+				document.Calculator.display.value = value.substr(0, value.length -1)
+			}
+
 
 	
 		//operation buttons defined here * / + - = clear % and home (home is work in progress)
 		
-		function trimzero() {
-			var value = document.Calculator.display.value;
-			var zero = document.Calculator.display.value.endsWith("0");
 
-			if (zero === true) {
-				document.Calculator.display.value = value.substr(0, value.length - 1);
-
-			}
-
-		}
 
 		function back() {
   		var value = document.Calculator.display.value;
@@ -389,13 +400,6 @@
 	
           
 		</div>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89537084-2"></script>
-		<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
- 		 gtag('js', new Date());
-						 gtag('config', 'UA-89537084-2');
-		</script>
+
 	</div>
 </html>
