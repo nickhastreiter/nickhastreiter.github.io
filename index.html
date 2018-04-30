@@ -218,7 +218,7 @@ html, body {
                             <strong>0 to 9<br>
                             * / + - <br>
                             C to clear<br>
-                            Enter, Spacebar, or =<br>
+                            Enter or =<br>
                             Delete/Backspace<br>
 						(or just click)<br><br>
 						Press the home button to start</strong>
@@ -389,7 +389,7 @@ function myFunctionDelete(event)
 			}
   		}
   		//event.preventDefault(); is removing the focus from last click (and for spacebar prevents scrolling)
-		  else if(key==" "){
+	/*	  else if(key==" "){
     		event.preventDefault();
 			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7)
     		document.Calculator.display.style.textAlign="right";
@@ -397,7 +397,7 @@ function myFunctionDelete(event)
 				trimzero()
 				}
     		}
-	
+	*/
 		else if(keyCode=="13"){
 			event.preventDefault();
 			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7)
