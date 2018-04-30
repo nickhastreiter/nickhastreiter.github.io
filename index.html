@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html style="width:100%; background: #1D67BD">
 		
 	<head>
 
@@ -10,7 +10,7 @@
 	/*       begin Calculator styling      */
 	#device {
 /*		position: absolute; top: 600px; left: 475px; outline: none; border: 6px ridge black; width:305px; height:550px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 50px; box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
-*/      position: relative; top: 355px; outline: none; border: 6px ridge black; width:305px; height:550px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 50px; box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
+*/      position: relative; top: 263px; outline: none; border: 6px ridge black; width:305px; height:550px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 50px; box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.75);
 	
     }
 	.display {
@@ -48,14 +48,14 @@
 	/*     Begin regular site styling     */
 	}
 	h1 {
-		font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 48px; color:white;
+		font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 48px; color:#1D67BD;
 	}
 	p  {
 		font-family: Futura, "Trebuchet MS", Arial, sans-serif; font-size: 20px; color:white;
 	}
     a:link {
 
-        color:#F4B838 ;
+        color:white;
         text-decoration: none;
     }
 
@@ -65,33 +65,53 @@
         display: none; 
     }
 
-    #turnmeon { 
-		position: relative; top: 220px; color: black; display: inline; 
+    #presshome { 
+		position: relative; top: 220px; color: black; display: inline; height: 40px; width: 125px; background: white;
 	}
 
 	#home {
 		position: absolute; bottom: 6px; left: 120px;
 	}
-    #instruct{
-        outline: none; border: solid 1px white; position: relative; top: 27px; height: 40px; width: 200px; background: #1D67BD; color: white;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 18px;
+    #instructbutton{
+        outline: none;  border-radius: 20px; position: relative; top: 205px; height: 43px; width: 175px; background: white; color: #1D67BD;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 22px; font-weight: 700;
     }
 
 	#header {
         position: absolute;
-        top: 120px;
+        top: 0px;
         left: 0px;
         right:0px;
         text-align: center;
 		margin: 0 auto;
+		padding-left: 0px;
+		padding-right: 0px;
 		padding-bottom: 0px; 
-		height:450px; 
+		height:1180px; 
 		width: 100%; 
 		background-color:#1D67BD; 
-        font-family: Futura, "Calibri", Arial, sans-serif; 
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 14px;
 
 }
 
+html, body {
+
+    margin: 0;
+    padding: 0;
+}
+
+	#titlebar {
+		position: absolute;
+		top: 0px;
+		height: 150px;
+		width: 100%;
+        margin: 0;
+        padding: 0;
+		background: white;
+		color: #1D67BD;
+ 
+
+	}
 
 	#createdby { 
 		font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
@@ -101,12 +121,12 @@
 
     #container {
 
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         width: 100%;
-        min-height:1350px;
+        min-height:1280px;
         position: absolute;
-        background: white;  
+        background: #1D67BD;  
 } 
 
 /*
@@ -122,11 +142,10 @@
 */
 
 #body {
-   margin:0px;
-   padding:0px;
+   margin:0;
+   padding:0;
    height:100%;
    width:100%;
-   
    padding-bottom:100px;   /* Height of the footer */
    
 }
@@ -134,11 +153,23 @@
 #footer {
    position:absolute;
    bottom:0px;
-   left:0px;
-   right:0px;
+   left:0;
+   right:0;
    width:100%;
    height:100px;   /* Height of the footer */
    background:#1D67BD;
+}
+
+
+.bluebar {
+	position: absolute; 
+	top: 130px;
+	height: 50px;
+	width: 40px;
+	background: #1D67BD;
+    border-radius: 3px;
+
+
 }
 
 </style>
@@ -154,10 +185,34 @@
 			
 			
                 <div id="header">
-                    <br><h1>Nick's Calculator</h1>
-                    <p style="color: #F4B838;">Likely the most powerful math machine in the world.<br>
-                        <input id= "instruct" type= "button" value="Instructions" onClick = "movedevice()" />
-                        <div style="position: relative; top: 40px; width:317px; height: 270px; margin: 0 auto; background: white;  border-radius: 60px;">
+
+			     <div id="titlebar"> <h1>La Calculadora
+                    </h1> <div class="whitebar"></div> </div>
+				<!--	   <div class ="bluebar" style="position: absolute; left: -20px;"></div>	
+				   <div class ="bluebar" style="position: absolute; left: 50px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 120px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 190px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 260px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 330px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 400px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 470px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 540px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 610px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 680px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 750px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 820px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 890px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 960px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 1030px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 1100px;"></div>
+					<div class ="bluebar" style="position: absolute; left: 1170px;"></div>
+                    <div class ="bluebar" style="position: absolute; left: 1240px;"></div>
+                    
+            -->
+
+               <!--     <p style="color: white; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Likely the most powerful math machine in the world.<br>    -->
+                        <input id= "instructbutton" type= "button" value="Instructions" onClick = "movedevice()"/>
+                        <div style="position: relative; top: 260px; width:317px; height: 550px; margin: 0 auto; background: white;  border-radius: 60px;">
                         
                             <div style= "position: relative; top: 15px; margin: 0 auto; color: #1D67BD;"><strong>Keyboard Commands</strong><br><br>
                             <strong>0 to 9<br>
@@ -165,7 +220,8 @@
                             C to clear<br>
                             Enter, Spacebar, or =<br>
                             Delete/Backspace<br>
-                        (or just click)</strong>
+						(or just click)<br><br>
+						Press the home button to start</strong>
                             </p>
                             </div>
                         </div>	
@@ -176,7 +232,7 @@
 		<body onkeypress="myFunction(event)" onkeydown="myFunctionDelete(event)" >
 		<br><br>
 		<center>
-			<div id="device" style="position: relative; top: 355px;">
+			<div id="device" style="position: relative; top: 263px;">
 				<form id= "screen" name ="Calculator" style="width:305px; height:462px; background:#2D2D34; border-radius: 60px">
 				<input class= "display" name ="display" placeholder = "0" />
 				<br>
@@ -208,10 +264,13 @@
 				<input class= "home" type= "button" value=" " onClick = "btnhome()" />
 			
                 </form></center>
-                <div id="turnmeon">
+                <div id="presshome">
 
-                    <br><br><p style="font-size: 26px;	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
-                        Press Home</p>
+                
+					<!--floats on screen	<br><br><p style="font-size: 26px;	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
+						Press Home</p>
+					-->
+					
 			</div>
         
 
@@ -244,47 +303,18 @@
 		
 
 
-            // #2 trying to move on instruction click
-  /*          function movedevice()
-{
-            document.getElementsById("device")[0].style.top="100px";
-}
-*/
+            // Move position on instruction click
 
-
-            function movedevice()
-        {     var x = document.getElementById("device");
-             if(x.style.top == "355px"){
-             x.style.top="550px";    
-            }else{
-             x.style.top="355px";  
-    }
-}
-
-
+            function movedevice(){     
+			var x = document.getElementById("device");
+            if(x.style.top == "263px"){
+            x.style.top="470px";    
+		}	else{
+             x.style.top="263px";  
+}}
 
 		//trying to move on instruction click -- not working
-	/*	
-        function instruct(x_pos, y_pos) {
-        var d = document.getElementById("device");
-        d.style.position = "absolute";
-        d.style.left = x_pos+"475px";
-         d.style.top = y_pos+"30px";
-}		
-  */      
-  /*  		//trying to make a new screen... this removes everything:
-    
-        function instruct() {
-            var x = document.getElementById("device");
-            if (x.style.top === "550"){
-                x.style.top = "0";
-            }
-                else { 
-                    x.style.top = "550";
-                }
-            }
-        
-       */ 
+
         
         function btnhome() {
    			 var x = document.forms[0];
@@ -297,99 +327,13 @@
                     hideinstruct();		
 }}    
             function hideinstruct() {
-                 var x = document.getElementById("turnmeon");
+                 var x = document.getElementById("presshome");
                 if (x.style.display === "inline") {
                     x.style.display = "block";
                 }
                 else {
                     x.style.display = "none";
 }}
-
-
-
-
-/*              // This makes the instructions go away after one click!
-                  function btnhome() {
-   			 var x = document.forms[0];
-   			 if (x.style.display === "none") {
-        		x.style.display = "block";
-				hideinstruct();
-				}
-               else if 
-                    (x.style.display === "inline"); {
-					x.style.display = "none";	
-                    hideinstruct();		
-}} 
-    
-            function hideinstruct() {
-                 var x = document.getElementById("turnmeon");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                }
-                else {
-                    x.style.display = "none";
-}}
-  
-  */
-  
-  
-  /*         //works really well EXCEPT for the screen toggle- don't mess with
-     
-                function btnhome() {
-   			 var x = document.forms[0];
-   			 if (x.style.display === "none") {
-        		x.style.display = "block";
-				hideinstruct();
-				}
-               else {
-					x.style.display = "inline";	
-                    hideinstruct();
-			
-			   
-
-		
-}} 
-        
-        
-            function hideinstruct() {
-                 var x = document.getElementById("turnmeon");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                }
-                else {
-                    x.style.display = "none";
-}}
-        */
-        
-        
-        
-  /*      
-        
-        	function btnhome() {
-   			 var x = document.forms[0];
-   			 if (x.style.display === "none") {
-        		x.style.display = "block";
-                hideinstruct();
-    		} 		
-				else {
-       			 x.style.display = "none";
-                    hideinstruct();
-    }
-}
-*/
-
-	//#2 new screen
-/*			function btnhome() {
-   			 var x = getElementById("screen");
-   			 if (x.style.display === "none") {
-        		x.style.display = "block";
-    		} 		
-				else {
-       			 x.style.display = "none";
-    }
-}
-*/
-
 
 
 // BEGIN CORE CODE FOR CALCULATOR FUNCTIONS-------------------------------------------------------------
