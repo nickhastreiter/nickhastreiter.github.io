@@ -73,7 +73,7 @@
 		position: absolute; bottom: 6px; left: 120px;
 	}
     #instructbutton{
-        outline: none;  border-radius: 20px; position: relative; top: 205px; height: 43px; width: 185px; background: white; color: #1D67BD;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 20px; font-weight: 700;
+        outline: none; border: solid 1px white; border-radius: 15px; position: relative; top: 205px; height: 43px; width: 185px; background: white; color: #1D67BD;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 20px; font-weight: 700;
     }
 
 	#header {
@@ -186,8 +186,8 @@ html, body {
 			
                 <div id="header">
 
-			     <div id="titlebar"> <h1>La Calculadora
-                    </h1> <div class="whitebar"></div> </div>
+			     <div id="titlebar"> <h1>La Calculadora</h1> 
+                    <div class="whitebar"></div> </div>
 				<!--	   <div class ="bluebar" style="position: absolute; left: -20px;"></div>	
 				   <div class ="bluebar" style="position: absolute; left: 50px;"></div>
 					<div class ="bluebar" style="position: absolute; left: 120px;"></div>
@@ -319,10 +319,16 @@ html, body {
 {       var x = document.getElementById("instructbutton");
         if (x.value==="Instructions") 
         { x.value = "Hide Instructions";
+            x.style.background = "#1D67BD";
+            x.style.border = "solid 2px white";
+            x.style.color = "white";
         }
-        else x.value = "Instructions";
-        
-        
+        else if (x.value === "Hide Instructions") {
+       x.value = "Instructions";
+        x.style.background = "white";
+        x.style.border = "solid 2px white";
+        x.style.color = "#1D67BD";
+        }
 }
 
 
@@ -342,7 +348,9 @@ html, body {
                     
                 	
 }}    
-            function hideinstruct() {
+
+    // This is for when "Press Home" is in the center of the display... currently commented out
+  /*          function hideinstruct() {
                  var x = document.getElementById("presshome");
                 if (x.style.display === "inline") {
                     x.style.display = "block";
@@ -350,7 +358,7 @@ html, body {
                 else {
                     x.style.display = "none";
 }}
-
+*/
 
 
 
