@@ -41,7 +41,7 @@
 		outline: none; border: ridge 1px orange; width: 60px; height: 60px; margin: 4px; background: #2D2D34; border-radius: 100px; font-size: 30px; color: gold;
 	} 
 	.home {
-		outline: none; border: ridge 1px #2D2D34; width: 55px; height: 55px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 100px;
+		outline: none; border: ridge 1px #2D2D34; width: 52px; height: 52px; margin: 0px 0px 0px 0px; background: #2D2D34; border-radius: 100px;
 	
 	/*    End Calculator styling    */
 	
@@ -73,7 +73,7 @@
 		position: absolute; bottom: 6px; left: 120px;
 	}
     #instructbutton{
-        outline: none;  border-radius: 20px; position: relative; top: 205px; height: 43px; width: 175px; background: white; color: #1D67BD;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 22px; font-weight: 700;
+        outline: none;  border-radius: 20px; position: relative; top: 205px; height: 43px; width: 185px; background: white; color: #1D67BD;  font-family: Calibri, "Trebuchet MS", Arial, sans-serif; font-size: 20px; font-weight: 700;
     }
 
 	#header {
@@ -174,7 +174,7 @@ html, body {
 
 </style>
 	
-	<title>La Calculadora</title>
+	<title>Nick's Calculator</title>
 </head>
 
 	
@@ -308,10 +308,23 @@ html, body {
             function movedevice(){     
 			var x = document.getElementById("device");
             if(x.style.top == "263px"){
-            x.style.top="470px";    
+            x.style.top="470px"; 
+            hideInstructionsText()   
 		}	else{
              x.style.top="263px";  
+             hideInstructionsText()
 }}
+
+        function hideInstructionsText() // no ';' here
+{       var x = document.getElementById("instructbutton");
+        if (x.value==="Instructions") 
+        { x.value = "Hide Instructions";
+        }
+        else x.value = "Instructions";
+        
+        
+}
+
 
 		//trying to move on instruction click -- not working
 
@@ -321,10 +334,13 @@ html, body {
    			 if (x.style.display === "none") {
         		x.style.display = "block";
 				hideinstruct();
+                
 				}
                else {
 					x.style.display = "block";	
-                    hideinstruct();		
+                    hideinstruct();	
+                    
+                	
 }}    
             function hideinstruct() {
                  var x = document.getElementById("presshome");
@@ -334,6 +350,8 @@ html, body {
                 else {
                     x.style.display = "none";
 }}
+
+
 
 
 // BEGIN CORE CODE FOR CALCULATOR FUNCTIONS-------------------------------------------------------------
@@ -393,7 +411,7 @@ function myFunctionDelete(event)
     		event.preventDefault();
 			document.Calculator.display.value = eval(document.Calculator.display.value).toFixed(7)
     		document.Calculator.display.style.textAlign="right";
-			{
+			{ event.preventDefault();
 				trimzero()
 				}
     		}
