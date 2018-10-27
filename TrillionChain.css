@@ -1,0 +1,223 @@
+body {
+	background: white;
+	margin: 0px;
+	width: 100%;
+	height: 1000px;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+	
+}
+
+h1 {
+	font-size: 3vw;
+	color: goldenrod;
+}
+h2 {font-size: 2vw;
+	color: goldenrod;
+}
+p  {
+	font-size: 1.3vw; 
+}
+
+ul {
+	font-size: 1.3vw; 
+}
+
+a {
+
+	text-decoration: none;
+}
+
+#container {
+	max-height: 100%;
+}
+
+#navbar {
+
+	height: 90px; 
+	width: 100%;
+	background: black;
+	box-shadow: 0px 0px 10px 0px;
+
+}
+
+#logo {
+	margin-top: 14px;
+	margin-left: 20px; 
+	border: ridge 4px gold;   
+		border-radius: 15px;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background: black;
+	height: 70px;
+	width: 100%;
+	margin: 0px;
+	text-align: center;
+}
+
+#footerlogo {
+	position: relative;
+	top: 12px;
+	height: 41px;
+	width: 41px;
+	border: inset 4px gold;  
+	border-radius: 15px;
+}
+
+
+.teamcol {
+    display: flex;
+   	position: relative;
+
+}
+
+
+
+.column {
+    flex: 50%;
+    margin-left:30px;
+    color: white;
+
+}
+
+
+#projectbar {
+	position: relative;
+	top: 140px;
+	height: 1390px;
+	width: 100%;
+	color: white;
+	background: black;
+	  clip-path: polygon(
+    0 7%, /* left top */
+    100% 0%, /* right top */ 
+    100% 100%, /* right bottom */
+    0 93% /* left bottom */  );
+	/* box-shadow: 0px 0px 5px 6px;  */
+}
+#teamsect {
+	position: relative;
+	top: 2800px;
+	height: 1550px;
+	width: 100%;
+	color: white;
+	background: black;
+	  clip-path: polygon(
+    0 7%, /* left top */
+    100% 0%, /* right top */ 
+    100% 100%, /* right bottom */
+    0 93% /* left bottom */  );
+	/* box-shadow: 0px 0px 5px 6px;  */
+	}
+
+#teamarea {
+	width: 60%;
+	margin: auto;
+	position: relative;
+	top: 1400px;
+	color: white;
+	}
+
+	#team {
+ 	position: absolute;
+ 	top: 1100px;
+}
+
+	#video {
+	
+	height: 400px;
+	width: 600px;
+	display: block;
+	margin: auto;
+
+}
+
+#buyT {
+
+   	position: relative;
+   	top: 100px;
+   	height: 600px;
+   	width: 60%;
+   	margin:auto;
+   	color:white;
+}
+#moreinfo {
+   	position: relative;
+   	top:150px;
+   	height: 600px;
+   	width: 60%;
+   	margin:auto;
+   	color:black;
+
+}
+
+#moremoreinfo {
+	 position:relative; 
+	 top:2180px; 
+	 height: 1100px;
+	 width: 60%;
+	 margin: auto;
+}
+
+.buttons {
+	position: absolute;
+	right: 60px;
+	top: 30px;
+
+
+
+}
+
+.button {
+	height: 42px; 
+	width: 140px; 
+	background: black; 
+	border: solid 2px silver;
+	border-radius: 10px;
+	font-size: 18px;
+	color: white;
+	margin-right: 8px;
+	margin-left: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	padding-right:20px;
+	outline: none;
+}
+
+.buttonblue {
+	height: 42px; 
+	width: 140px; 
+	background: black;
+	border: ridge 3px goldenrod;
+	border-radius: 10px;
+	font-size: 18px;
+	color: white;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	padding-right:20px;
+	outline: none;
+}
+
+.makeatrillionaire {
+	height: 55px; 
+	max-width: 270px; 
+	background: #2d2d34;
+	border: ridge 4px gold;
+	border-radius: 15px;
+	font-size: 1.3vw;
+	color: white;
+	margin-left: 8px;
+	margin-right: 8px;
+	outline: none;
+}
+
+
+
